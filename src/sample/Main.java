@@ -9,7 +9,8 @@ import javafx.stage.Stage;
 /**
  * This is the main class. It opens the JavaFX application.
  *  @author Emily R Schwarz
- *  */
+ *  9/30/19
+ */
 public class Main extends Application {
 
   /**
@@ -19,6 +20,7 @@ public class Main extends Application {
    * @param primaryStage The primary stage.
    * @throws Exception Any problem with the code.
    */
+
   @Override
   public void start(Stage primaryStage) throws Exception {
     Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));

@@ -8,6 +8,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 
+/**
+ * This is the Controller class. This is where the FXML and connection to the Database go.
+ * @author Emily R. Schwarz
+ * 9/30/19
+ */
+
 public class Controller {
 
   private Connection conn;
@@ -17,6 +23,11 @@ public class Controller {
 
 
   @FXML ComboBox<Integer> produceQuantityComboBox;
+
+  /**
+   *
+   * @param event This event represents when the button "Add Product" is clicked.
+   */
 
   @FXML
   void addProductButtonClick(ActionEvent event) {
