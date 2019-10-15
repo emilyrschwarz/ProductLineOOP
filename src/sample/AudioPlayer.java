@@ -16,9 +16,6 @@ public class AudioPlayer extends Product implements MultimediaControl {
   }
 
   @Override
-  public void printItemInfo() {}
-
-  @Override
   public void play() {
     System.out.println("Playing");
   }
