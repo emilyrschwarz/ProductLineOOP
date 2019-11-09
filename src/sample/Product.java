@@ -45,3 +45,9 @@ public abstract class Product implements Item {
     return type;
   }
 }
+
+class Widget extends Product {
+  public Widget(String name, String manufacturer, String type) {
+    super(name, manufacturer, type);
+  }
+}
