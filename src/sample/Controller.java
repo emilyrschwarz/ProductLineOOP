@@ -146,11 +146,14 @@ public class Controller {
       ps.setString(3, itemTypeChoiceBx.getValue().code);
 
       ps.executeUpdate();
+      ps.close();
+      conn.close();
 
       System.out.println("Item has been added!");
 
     } catch (SQLException e) {
       e.printStackTrace();
+      conn.close();
     }
     try {
       String sql = "SELECT * FROM PRODUCT";
@@ -190,8 +193,10 @@ public class Controller {
       }
       existingProductsTblView.setItems(productLine);
       chooseLabelListView.setItems(productLine);
+      conn.close();
     } catch (SQLException e) {
       e.printStackTrace();
+      conn.close();
     }
   } // END ADD PRODUCT BTN
 
