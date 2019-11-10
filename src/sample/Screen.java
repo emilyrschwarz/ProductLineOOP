@@ -1,17 +1,22 @@
 package sample;
 
+/**
+ * This is the Screen Class.
+ *
+ * @author Emily R Schwarz
+ */
 public class Screen implements ScreenSpec {
 
   String resolution;
   int refreshRate;
   int responseTime;
 
-  public Screen(String theResolution, int theRefreshRate, int theResponseTime){
+  public Screen(String theResolution, int theRefreshRate, int theResponseTime) {
     resolution = theResolution;
     refreshRate = theRefreshRate;
     responseTime = theResponseTime;
-
   }
+
   public String toString() {
 
     return "Screen:"

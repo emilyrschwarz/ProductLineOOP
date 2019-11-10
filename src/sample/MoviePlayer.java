@@ -1,5 +1,10 @@
 package sample;
 
+/**
+ * This is the Movie Player Class.
+ *
+ * @author Emily R Schwarz
+ */
 public class MoviePlayer extends Product implements MultimediaControl {
 
   Screen screen;
@@ -30,6 +35,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
   public void next() {
     System.out.println("Next movie");
   }
+
   public String toString() {
     return "Name: "
         + getName()
@@ -43,6 +49,8 @@ public class MoviePlayer extends Product implements MultimediaControl {
         + monitorType;
   }
 
+  // SETTERS //
+
   public void setScreen(Screen theScreen) {
     screen = theScreen;
   }
@@ -50,6 +58,8 @@ public class MoviePlayer extends Product implements MultimediaControl {
   public void setMonitorType(MonitorType theMonitor) {
     monitorType = theMonitor;
   }
+
+  // GETTERS //
 
   public Screen getScreen() {
     return screen;

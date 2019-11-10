@@ -1,5 +1,10 @@
 package sample;
 
+/**
+ * This is the Audio Player class. This holds multimedia control for audio players.
+ *
+ * @author Emily R Schwarz
+ */
 public class AudioPlayer extends Product implements MultimediaControl {
 
   private String supportedAudioFormats;
@@ -34,9 +39,37 @@ public class AudioPlayer extends Product implements MultimediaControl {
   public void next() {
     System.out.println("Next");
   }
+
   public String toString() {
-    return "Name: " + getName() + "\nManufacturer: " + getManufacturer() + "\nType: " + getType()
-        + "\nSupported Audio Formats: " + supportedAudioFormats +
-        "\nSupported Playlist Formats: " + supportedPlaylistFormats;
+    return "Name: "
+        + getName()
+        + "\nManufacturer: "
+        + getManufacturer()
+        + "\nType: "
+        + getType()
+        + "\nSupported Audio Formats: "
+        + supportedAudioFormats
+        + "\nSupported Playlist Formats: "
+        + supportedPlaylistFormats;
+  }
+
+  // SETTERS //
+
+  public void setSupportedAudioFormats(String supportAF) {
+    supportedAudioFormats = supportAF;
+  }
+
+  public void setSupportedPlaylistFormats(String supportPF) {
+    supportedPlaylistFormats = supportPF;
+  }
+
+  // GETTERS //
+
+  public String getSupportedAudioFormats() {
+    return supportedAudioFormats;
+  }
+
+  public String getSupportedPlaylistFormats() {
+    return supportedPlaylistFormats;
   }
 }
