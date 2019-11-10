@@ -1,7 +1,7 @@
 package sample;
 
 /**
- * This is the Monitor Type Enum.
+ * This is the Monitor Type Enum. It describes the type of display each monitor has.
  *
  * @author Emily R Schwarz
  */

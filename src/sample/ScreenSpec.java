@@ -1,7 +1,7 @@
 package sample;
 
 /**
- * This is the Screen Specifications Interface.
+ * This is the Screen Specifications Interface. These are the getter methods for Screen.java.
  *
  * @author Emily R Schwarz
  */

@@ -12,6 +12,11 @@ public abstract class Product implements Item {
   private String manufacturer;
   private String name;
 
+  /**
+   * @param name The name of the product.
+   * @param manufacturer The person/company that made the product.
+   * @param type The type of product.
+   */
   public Product(String name, String manufacturer, String type) {
     this.name = name;
     this.manufacturer = manufacturer;
@@ -19,12 +24,12 @@ public abstract class Product implements Item {
     id = 0;
   }
 
+  /** @return A string of the name, manufacturer, and type of product. */
   public String toString() {
     return "Name: " + name + "\nManufacturer: " + manufacturer + "\nType: " + type;
   }
 
-  // SETTERS //
-
+  /** MUTATOR METHODS * */
   public void setId(int id) {
     this.id = id;
   }
@@ -41,8 +46,7 @@ public abstract class Product implements Item {
     type = theType;
   }
 
-  // GETTERS //
-
+  /** ACCESSOR METHODS * */
   public int getId() {
     return id;
   }
@@ -62,6 +66,7 @@ public abstract class Product implements Item {
 
 // WIDGET CLASS //
 
+/** The Widget Class instantiates objects of Product. Product is an Abstract Class. */
 class Widget extends Product {
   public Widget(String name, String manufacturer, ItemType type) {
     super(name, manufacturer, type.toString());

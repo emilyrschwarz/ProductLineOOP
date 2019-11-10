@@ -1,7 +1,7 @@
 package sample;
 
 /**
- * This is the Screen Class.
+ * This is the Screen Class. This contains code to display a movie to a movie player.
  *
  * @author Emily R Schwarz
  */
@@ -11,12 +11,18 @@ public class Screen implements ScreenSpec {
   int refreshRate;
   int responseTime;
 
+  /**
+   * @param theResolution The resolution of the screen.
+   * @param theRefreshRate The refresh rate of the screen. The time the screen takes to update.
+   * @param theResponseTime The response time of the screen. The speed the screen reacts at.
+   */
   public Screen(String theResolution, int theRefreshRate, int theResponseTime) {
     resolution = theResolution;
     refreshRate = theRefreshRate;
     responseTime = theResponseTime;
   }
 
+  /** @return This returns a String of the screen resolution, refresh rate, and response time. */
   public String toString() {
 
     return "Screen:"

@@ -10,6 +10,12 @@ public class AudioPlayer extends Product implements MultimediaControl {
   private String supportedAudioFormats;
   private String supportedPlaylistFormats;
 
+  /**
+   * @param name The name of the audio player.
+   * @param manufacturer The manufacturer of the audio player.
+   * @param supportedAudioFormats The supported audio formats of the audio player.
+   * @param supportedPlaylistFormats The supported playlist formats of the audio player.
+   */
   public AudioPlayer(
       String name,
       String manufacturer,
@@ -40,6 +46,10 @@ public class AudioPlayer extends Product implements MultimediaControl {
     System.out.println("Next");
   }
 
+  /**
+   * @return Returns a String of the name, manufacturer, type, supported audio formats, and
+   *     supported playlist formats of the audio player.
+   */
   public String toString() {
     return "Name: "
         + getName()
@@ -53,8 +63,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
         + supportedPlaylistFormats;
   }
 
-  // SETTERS //
-
+  /** MUTATOR METHODS * */
   public void setSupportedAudioFormats(String supportAF) {
     supportedAudioFormats = supportAF;
   }
@@ -63,8 +72,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
     supportedPlaylistFormats = supportPF;
   }
 
-  // GETTERS //
-
+  /** ACCESSOR METHODS * */
   public String getSupportedAudioFormats() {
     return supportedAudioFormats;
   }

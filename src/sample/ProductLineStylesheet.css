@@ -1,0 +1,57 @@
+#mainGridPane {
+  -fx-background-color: #e6ccff;
+}
+
+#mainTabPane {
+  -fx-background-color: #e6ccff;
+}
+
+#productLineTab {
+  -fx-background-color: #d9b3ff;
+}
+
+#produceTab {
+  -fx-background-color: #d9b3ff;
+}
+
+#productionLogTab {
+  -fx-background-color: #d9b3ff;
+}
+
+#addProductBtn {
+  -fx-background-color: #ffffe6;
+}
+
+#recordProdBtn {
+  -fx-background-color: #ffffe6;
+}
+
+#itemTypeChoiceBx {
+  -fx-background-color: #ffffe6;
+  -fx-border-color: dark gray;
+}
+
+#produceQuantityComboBox {
+  -fx-background-color: #ffffe6;
+  -fx-border-color: dark gray;
+}
+
+#idCol {
+  -fx-background-color: #ffffe6;
+  -fx-border-color: dark gray;
+}
+
+#itemTypeCol {
+  -fx-background-color: #ffffe6;
+  -fx-border-color: dark gray;
+}
+
+#manuCol {
+  -fx-background-color: #ffffe6;
+  -fx-border-color: dark gray;
+}
+
+#productCol {
+  -fx-background-color: #ffffe6;
+  -fx-border-color: dark gray;
+}

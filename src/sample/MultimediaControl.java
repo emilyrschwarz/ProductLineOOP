@@ -1,7 +1,8 @@
 package sample;
 
 /**
- * This is the Multimedia Control Interface.
+ * This is the Multimedia Control Interface. This holds the controls of video and audio players,
+ * since they are the same.
  *
  * @author Emily R Schwarz
  */
