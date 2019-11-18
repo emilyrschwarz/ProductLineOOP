@@ -28,30 +28,30 @@
 
 #itemTypeChoiceBx {
   -fx-background-color: #ffffe6;
-  -fx-border-color: dark gray;
+  -fx-border-color: gray;
 }
 
 #produceQuantityComboBox {
   -fx-background-color: #ffffe6;
-  -fx-border-color: dark gray;
+  -fx-border-color: gray;
 }
 
 #idCol {
   -fx-background-color: #ffffe6;
-  -fx-border-color: dark gray;
+  -fx-border-color: gray;
 }
 
 #itemTypeCol {
   -fx-background-color: #ffffe6;
-  -fx-border-color: dark gray;
+  -fx-border-color: gray;
 }
 
 #manuCol {
   -fx-background-color: #ffffe6;
-  -fx-border-color: dark gray;
+  -fx-border-color: gray;
 }
 
 #productCol {
   -fx-background-color: #ffffe6;
-  -fx-border-color: dark gray;
+  -fx-border-color: gray;
 }

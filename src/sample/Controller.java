@@ -43,40 +43,6 @@ public class Controller {
   static final String JDBC_DRIVER = "org.h2.Driver";
   static final String DB_URL = "jdbc:h2:./res/ProductLineDatabase";
 
-  /** Initialize initializes the database. */
-  void initialize() {
-
-    // intelliJ must be disconnected from database in order for program to connect
-
-    //  Database credentials
-    conn = null;
-    stmt = null;
-
-    try {
-      // Register JDBC driver
-      Class.forName(JDBC_DRIVER);
-
-      // Open a connection
-      conn = DriverManager.getConnection(DB_URL);
-      stmt = conn.createStatement();
-
-      // Clean-up environment
-      produceQuantityComboBox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
-      produceQuantityComboBox.setEditable(true);
-
-      produceQuantityComboBox.getSelectionModel().selectFirst();
-
-      itemTypeChoiceBx.getItems().addAll(AUDIO, VISUAL, AUDIO_MOBILE, VISUAL_MOBILE);
-
-      itemTypeChoiceBx.getSelectionModel().selectFirst();
-
-      // conn.close();
-    } catch (ClassNotFoundException | SQLException e) {
-      e.printStackTrace();
-    }
-  } // END INITIALIZE
-
   @FXML private GridPane mainGridPane;
 
   @FXML private TabPane mainTabPane;
@@ -131,6 +97,39 @@ public class Controller {
 
   private ObservableList<Product> productLine = FXCollections.observableArrayList();
 
+  /** Initialize initializes the database. */
+  public void initialize() {
+
+    // intelliJ must be disconnected from database in order for program to connect
+
+    //  Database credentials
+    conn = null;
+    stmt = null;
+
+    try {
+      // Register JDBC driver
+      Class.forName(JDBC_DRIVER);
+
+      // Open a connection
+      conn = DriverManager.getConnection(DB_URL);
+      stmt = conn.createStatement();
+
+      // Clean-up environment
+      produceQuantityComboBox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+      produceQuantityComboBox.setEditable(true);
+
+      produceQuantityComboBox.getSelectionModel().selectFirst();
+
+      itemTypeChoiceBx.getItems().addAll(AUDIO, VISUAL, AUDIO_MOBILE, VISUAL_MOBILE);
+
+      itemTypeChoiceBx.getSelectionModel().selectFirst();
+
+      // conn.close();
+    } catch (ClassNotFoundException | SQLException e) {
+      e.printStackTrace();
+    }
+  } // END INITIALIZE
   /**
    * @param event This event represents when the button "Add Product" is clicked.
    * @throws SQLException
