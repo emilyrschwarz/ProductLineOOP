@@ -146,7 +146,6 @@ public class Controller {
 
       ps.executeUpdate();
       ps.close();
-      conn.close();
 
       System.out.println("Item has been added!");
 
