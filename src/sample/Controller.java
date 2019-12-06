@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,7 +25,6 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
@@ -93,9 +93,29 @@ public class Controller {
 
   @FXML private Tab productionLogTab;
 
-  @FXML private TextArea productionLogTxtArea;
+  @FXML private Tab employeeTab;
+
+  @FXML private AnchorPane b;
+
+  @FXML private Label employeeNameLabel;
+
+  @FXML private Label employeeEmailLabel;
+
+  @FXML private Label employeePassLabel;
+
+  @FXML private TextField employeeNmTxtField;
+
+  @FXML private TextField employeeEmlTxtField;
+
+  @FXML private TextField employeePWTxtField;
+
+  @FXML private Button createUserBtn;
+
+  @FXML private ListView<ProductionRecord> productionLogListView;
 
   private ObservableList<Product> productLine = FXCollections.observableArrayList();
+
+  private ObservableList<ProductionRecord> showProduct = FXCollections.observableArrayList();
 
   /** Initialize initializes the database. */
   public void initialize() {
@@ -191,7 +211,6 @@ public class Controller {
       }
       existingProductsTblView.setItems(productLine);
       chooseLabelListView.setItems(productLine);
-      conn.close();
     } catch (SQLException e) {
       e.printStackTrace();
       conn.close();
@@ -204,6 +223,54 @@ public class Controller {
    */
   @FXML
   void recordProdButtonClick(ActionEvent event) throws SQLException {
+    showProduct.clear();
+    Product recordedProduct = chooseLabelListView.getSelectionModel().getSelectedItem();
+    ProductionRecord produce = new ProductionRecord(recordedProduct, 0);
+
+    String productRecorded =
+        "INSERT INTO PRODUCTIONRECORD(PRODUCTION_NUM, PRODUCT_ID, SERIAL_NUM, DATE_PRODUCED) VALUES (?, ?, ?, ?)";
+    try {
+      PreparedStatement ps = conn.prepareStatement(productRecorded);
+      ps.setInt(1, produce.getProductionNum());
+      ps.setInt(2, produce.getProductID());
+      ps.setString(3, produce.getSerialNum());
+      ps.setTimestamp(4, Timestamp.from(produce.getProdDate().toInstant()));
+      ps.executeUpdate();
+      ps.close();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+
+    String showProduction = "SELECT * FROM PRODUCTIONRECORD";
+    try {
+      ResultSet rs = stmt.executeQuery(showProduction);
+
+      ProductionRecord showRecord =
+          new ProductionRecord(
+              produce.getProductID(),
+              produce.getProductionNum(),
+              produce.getSerialNum(),
+              produce.getProdDate());
+
+      while (rs.next()) {
+
+        int productionNumber = rs.getInt(1);
+        int productId = rs.getInt(2);
+        String serialNum = rs.getString(3);
+        Timestamp dateRec = rs.getTimestamp(4);
+
+        showRecord.setProdDate(dateRec);
+        showRecord.setSerialNum(serialNum);
+        showRecord.setProductID(productId++);
+        showRecord.setProductionNum(productionNumber++);
+
+        showProduct.add(showRecord);
+        productionLogListView.setItems(showProduct);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+
     System.out.println("Production Recorded!");
   } // END RECORD PRODUCTION BTN
 }
