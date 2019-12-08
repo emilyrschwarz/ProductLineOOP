@@ -189,10 +189,12 @@ public class Controller {
       e.printStackTrace();
       conn.close();
     }
+    public void loadProducts(){
     try {
       String sql = "SELECT * FROM PRODUCT";
 
       ResultSet rs = stmt.executeQuery(sql);
+      productLine.clear();
       while (rs.next()) {
 
         // these lines correspond to the database table columns
@@ -227,6 +229,8 @@ public class Controller {
       }
       existingProductsTblView.setItems(productLine);
       chooseLabelListView.setItems(productLine);
+      manuTxtField.clear();
+      productNameTxtField.clear();
     } catch (SQLException e) {
       e.printStackTrace();
       conn.close();
