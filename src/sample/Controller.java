@@ -5,6 +5,8 @@ import static sample.ItemType.AUDIO_MOBILE;
 import static sample.ItemType.VISUAL;
 import static sample.ItemType.VISUAL_MOBILE;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.Properties;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -118,7 +121,7 @@ public class Controller {
   private ObservableList<ProductionRecord> showProduct = FXCollections.observableArrayList();
 
   /** Initialize initializes the database. */
-  public void initialize() {
+  public void initialize() throws SQLException, IOException {
 
     // intelliJ must be disconnected from database in order for program to connect
 
@@ -126,12 +129,19 @@ public class Controller {
     conn = null;
     stmt = null;
 
+    final String USER = "";
+    final String PASS;
+
     try {
+
+      Properties prop = new Properties();
+      prop.load(new FileInputStream("res/properties"));
+      PASS = prop.getProperty("password");
       // Register JDBC driver
       Class.forName(JDBC_DRIVER);
 
       // Open a connection
-      conn = DriverManager.getConnection(DB_URL);
+      conn = DriverManager.getConnection(DB_URL, USER, PASS);
       stmt = conn.createStatement();
 
       // Clean-up environment

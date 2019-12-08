@@ -20,12 +20,11 @@ public class Employee {
       email = "user@oracleacademy.Test";
     }
 
-    if (isValidPassword(password)==true) {
+    if (isValidPassword(password) == true) {
       this.password = password;
-    }else {
+    } else {
       this.password = "pw";
     }
-
   }
 
   private void setUsername(String name) {
@@ -46,6 +45,7 @@ public class Employee {
     boolean found = matcher.find();
     return found;
   }
+
   private void setEmail(String name) {
 
     Pattern nameBeforeSpace = Pattern.compile("(.*)\\s", Pattern.MULTILINE);
@@ -71,8 +71,24 @@ public class Employee {
   }
 
   public String toString() {
-    return "Employee Details\n" + "Name : " + name + "\n" + "Username : " + username + "\n"
-        + "Email : " + email + "\n" + "Initial Password : " + password;
+    return "Employee Details\n"
+        + "Name : "
+        + name
+        + "\n"
+        + "Username : "
+        + username
+        + "\n"
+        + "Email : "
+        + email
+        + "\n"
+        + "Initial Password : "
+        + password;
+  }
+
+  public String reverseString(String id) {
+    if (id.length() == 1) {
+      return id;
+    }
+    return reverseString(id.substring(1)) + id.charAt(0);
   }
 }
-
