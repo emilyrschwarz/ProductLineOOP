@@ -28,6 +28,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
@@ -113,6 +114,8 @@ public class Controller {
   @FXML private TextField employeePWTxtField;
 
   @FXML private Button createUserBtn;
+
+  @FXML private TextArea employeeTxtArea;
 
   @FXML private ListView<ProductionRecord> productionLogListView;
 
@@ -283,4 +286,10 @@ public class Controller {
 
     System.out.println("Production Recorded!");
   } // END RECORD PRODUCTION BTN
+
+  public void createEmployee(ActionEvent actionEvent) throws SQLException {
+    employeeTxtArea.clear();
+    Employee emp = new Employee(employeeNmTxtField.getText(), employeePWTxtField.getText());
+    employeeTxtArea.setText(emp.toString());
+  }
 }

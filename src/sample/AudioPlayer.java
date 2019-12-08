@@ -11,6 +11,9 @@ public class AudioPlayer extends Product implements MultimediaControl {
   private String supportedPlaylistFormats;
 
   /**
+   * Creates and sets the name, manufacturer, supported audio formats, and supported playlist
+   * formats of an audio player.
+   *
    * @param name The name of the audio player.
    * @param manufacturer The manufacturer of the audio player.
    * @param supportedAudioFormats The supported audio formats of the audio player.
@@ -47,6 +50,8 @@ public class AudioPlayer extends Product implements MultimediaControl {
   }
 
   /**
+   * toString() returns a string of properties about a specific audio player.
+   *
    * @return Returns a String of the name, manufacturer, type, supported audio formats, and
    *     supported playlist formats of the audio player.
    */
@@ -63,7 +68,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
         + supportedPlaylistFormats;
   }
 
-  /** MUTATOR METHODS * */
+  // MUTATOR METHODS
   public void setSupportedAudioFormats(String supportAF) {
     supportedAudioFormats = supportAF;
   }
@@ -72,7 +77,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
     supportedPlaylistFormats = supportPF;
   }
 
-  /** ACCESSOR METHODS * */
+  // ACCESSOR METHODS
   public String getSupportedAudioFormats() {
     return supportedAudioFormats;
   }

@@ -12,6 +12,8 @@ public class Screen implements ScreenSpec {
   int responseTime;
 
   /**
+   * Sets the screen resolution, refresh rate, and response time for each product.
+   *
    * @param theResolution The resolution of the screen.
    * @param theRefreshRate The refresh rate of the screen. The time the screen takes to update.
    * @param theResponseTime The response time of the screen. The speed the screen reacts at.
@@ -22,7 +24,11 @@ public class Screen implements ScreenSpec {
     responseTime = theResponseTime;
   }
 
-  /** @return This returns a String of the screen resolution, refresh rate, and response time. */
+  /**
+   * toString() returns a String of properties about the specific product.
+   *
+   * @return This returns a String of the screen resolution, refresh rate, and response time.
+   */
   public String toString() {
 
     return "Screen:"

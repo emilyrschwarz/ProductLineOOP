@@ -13,6 +13,8 @@ public abstract class Product implements Item {
   private String name;
 
   /**
+   * Creates a Product object using its name, manufacturer, and type.
+   *
    * @param name The name of the product.
    * @param manufacturer The person/company that made the product.
    * @param type The type of product.
@@ -24,12 +26,16 @@ public abstract class Product implements Item {
     id = 0;
   }
 
-  /** @return A string of the name, manufacturer, and type of product. */
+  /**
+   * toString() returns a string of properties of a specific product.
+   *
+   * @return A string of the name, manufacturer, and type of product.
+   */
   public String toString() {
     return "Name: " + name + "\nManufacturer: " + manufacturer + "\nType: " + type;
   }
 
-  /** MUTATOR METHODS * */
+  // MUTATOR METHODS
   public void setId(int id) {
     this.id = id;
   }
@@ -46,7 +52,7 @@ public abstract class Product implements Item {
     type = theType;
   }
 
-  /** ACCESSOR METHODS * */
+  // ACCESSOR METHODS
   public int getId() {
     return id;
   }

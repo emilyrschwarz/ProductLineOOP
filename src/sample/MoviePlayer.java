@@ -11,6 +11,9 @@ public class MoviePlayer extends Product implements MultimediaControl {
   MonitorType monitorType;
 
   /**
+   * Creates a movie player product using the name and manufacturer and sets the screen and monitor
+   * types that were inputted.
+   *
    * @param name The name of the movie player.
    * @param manufacturer The manufacturer of the movie player.
    * @param screen The type of screen each player has.
@@ -43,6 +46,8 @@ public class MoviePlayer extends Product implements MultimediaControl {
   }
 
   /**
+   * toString() returns a String of properties that correspond to the specific movie player logged.
+   *
    * @return This returns a String of the name, manufacturer, type, screen, and monitor of a movie
    *     player.
    */
@@ -59,7 +64,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
         + monitorType;
   }
 
-  /** MUTATOR METHODS * */
+  // MUTATOR METHODS
   public void setScreen(Screen theScreen) {
     screen = theScreen;
   }
@@ -68,7 +73,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
     monitorType = theMonitor;
   }
 
-  /** ACCESSOR METHODS * */
+  // ACCESSOR METHODS
   public Screen getScreen() {
     return screen;
   }

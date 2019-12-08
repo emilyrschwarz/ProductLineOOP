@@ -13,7 +13,11 @@ public enum ItemType {
   VISUAL_MOBILE("VM");
   public final String code;
 
-  /** @param itemCode Gives a String value to the corresponding Enum type. */
+  /**
+   * ItemType() gives a String value, itemCode, to the Enum type it corresponds to.
+   *
+   * @param itemCode Gives a String value to the corresponding Enum type.
+   */
   ItemType(String itemCode) {
     code = itemCode;
   }

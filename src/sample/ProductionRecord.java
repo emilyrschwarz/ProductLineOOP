@@ -14,7 +14,11 @@ public class ProductionRecord {
   private String serialNumber;
   private Date dateProduced;
 
-  /** @param productId Records a product by using its ID. */
+  /**
+   * Sets initial production number, serial number, and date to a product in production record.
+   *
+   * @param productId Records a product by using its ID.
+   */
   public ProductionRecord(int productId) {
 
     productionNumber = 0;
@@ -23,6 +27,8 @@ public class ProductionRecord {
   }
 
   /**
+   * Creates a serial number for a product and sets the date the product was produced.
+   *
    * @param product The product item.
    * @param count A variable that updates to give the product a serial number.
    */
@@ -36,6 +42,8 @@ public class ProductionRecord {
   }
 
   /**
+   * Sets the current date and a new serial number/production number/product ID to a product.
+   *
    * @param productId A generated ID of the product.
    * @param productionNumber The number assigned to product after production.
    * @param serialNumber The given number after the product is created.
@@ -61,7 +69,7 @@ public class ProductionRecord {
         + dateProduced;
   }
 
-  /** MUTATOR METHODS * */
+  // MUTATOR METHODS
   public void setProductionNum(int productionNumber) {
     this.productionNumber = productionNumber;
   }
@@ -78,7 +86,7 @@ public class ProductionRecord {
     this.dateProduced = dateProduced;
   }
 
-  /** ACCESSOR METHODS * */
+  // ACCESSOR METHODS
   public int getProductionNum() {
     return productionNumber;
   }

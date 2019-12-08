@@ -7,12 +7,12 @@ package sample;
  */
 public interface Item {
 
-  /** MUTATOR METHODS * */
+  // MUTATOR METHODS
   public void setName(String theName);
 
   public void setManufacturer(String theManu);
 
-  /** ACCESSOR METHODS * */
+  // ACCESSOR METHODS
   public int getId();
 
   public String getName();
