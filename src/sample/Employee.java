@@ -10,6 +10,12 @@ public class Employee {
   String password;
   String email;
 
+  /**
+   * Creates a new employee and sets their name, username, password, and email.
+   *
+   * @param name The employee name.
+   * @param password The password chosen by the employee.
+   */
   public Employee(String name, String password) {
     this.name = new StringBuilder(name);
     if (checkName(name)) {
@@ -70,6 +76,11 @@ public class Employee {
     return found;
   }
 
+  /**
+   * toString() returns a string of the properties of an employee (their log-in information).
+   *
+   * @return String of the employee name, username, email, and password.
+   */
   public String toString() {
     return "Employee Details\n"
         + "Name : "
@@ -85,6 +96,12 @@ public class Employee {
         + password;
   }
 
+  /**
+   * The employee password which passes through the recursive method to be encrypted.
+   *
+   * @param id A string inputted by the user.
+   * @return The reverse order of the ID.
+   */
   public String reverseString(String id) {
     if (id.length() == 1) {
       return id;

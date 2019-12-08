@@ -163,9 +163,12 @@ public class Controller {
       e.printStackTrace();
     }
   } // END INITIALIZE
+
   /**
+   * This stores all the code that makes the "Add Product" button add a product to the database.
+   *
    * @param event This event represents when the button "Add Product" is clicked.
-   * @throws SQLException
+   * @throws SQLException Catches exception for the "Add Product" button.
    */
   @FXML
   void addProductButtonClick(ActionEvent event) throws SQLException {
@@ -231,8 +234,10 @@ public class Controller {
   } // END ADD PRODUCT BTN
 
   /**
+   * Adds a product to the production record.
+   *
    * @param event This event represents when the "Record Production" button is clicked.
-   * @throws SQLException
+   * @throws SQLException Catches exception for "Record Production" button.
    */
   @FXML
   void recordProdButtonClick(ActionEvent event) throws SQLException {
@@ -241,7 +246,8 @@ public class Controller {
     ProductionRecord produce = new ProductionRecord(recordedProduct, 0);
 
     String productRecorded =
-        "INSERT INTO PRODUCTIONRECORD(PRODUCTION_NUM, PRODUCT_ID, SERIAL_NUM, DATE_PRODUCED) VALUES (?, ?, ?, ?)";
+        "INSERT INTO PRODUCTIONRECORD(PRODUCTION_NUM, PRODUCT_ID, SERIAL_NUM, DATE_PRODUCED) "
+            + "VALUES (?, ?, ?, ?)";
     try {
       PreparedStatement ps = conn.prepareStatement(productRecorded);
       ps.setInt(1, produce.getProductionNum());
@@ -287,6 +293,13 @@ public class Controller {
     System.out.println("Production Recorded!");
   } // END RECORD PRODUCTION BTN
 
+  /**
+   * This creates a new employee using the input from the name and password fields on the employee
+   * screen.
+   *
+   * @param actionEvent Creates a new employee and stores it in the employee text area.
+   * @throws SQLException Catches exception for making a new employee.
+   */
   public void createEmployee(ActionEvent actionEvent) throws SQLException {
     employeeTxtArea.clear();
     Employee emp = new Employee(employeeNmTxtField.getText(), employeePWTxtField.getText());
